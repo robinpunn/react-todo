@@ -13,6 +13,7 @@ let createListElement = () => {
     let createbut = document.createElement('button')
 
     createli.appendChild(document.createTextNode(input.value))
+    createli.classList.add('text')
     createbut.classList.add('fin')
     createbut.innerHTML = "remove"
 
