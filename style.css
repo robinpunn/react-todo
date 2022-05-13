@@ -1,0 +1,23 @@
+body {
+    background: linear-gradient(#e66465, #9198e5);
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+  }
+
+.text {
+    list-style: none;
+    justify-items: start;
+}
+
+.fin {
+    justify-items: end;
+}
+
+.done {
+    text-decoration: line-through;
+}
