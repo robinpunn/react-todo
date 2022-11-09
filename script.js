@@ -1,19 +1,23 @@
+// Selector variables
 let button = document.getElementById('enter');
 let input = document.getElementById('userinput');
 let ul = document.querySelector('ul');
 let child = document.querySelectorAll('li')
 let erase = document.querySelectorAll('.fin');
 
+// Get input length from text field
 let inputLength = () => {
     return input.value.length
 }
 
+// function to create new list items
 let createListElement = () => {
+    // variables to create li and button
     let createli = document.createElement('li')
     let createbut = document.createElement('button')
 
     createli.appendChild(document.createTextNode(input.value))
-    createli.classList.add('text')
+    createli.classList.add('list')
     createbut.classList.add('fin')
     createbut.innerHTML = "remove"
 

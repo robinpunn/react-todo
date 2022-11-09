@@ -6,24 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript + DOM</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="grid">
-        <h1>Road to Becoming a Developer</h1>
-        <p id="first">Get it done today</p>
-        <p class="second">No excuses</p>
-        <input id="userinput" type="text" placeholder="enter items">
-        <button id="enter">Enter</button>
-        <ul>
-            <li class="text">Learn HTML/CSS <button class="fin">remove</button></li>
-            <li class="text">Learn Javascript <button class="fin">remove</button></li>
-            <li class="text">Learn React, Node <button class="fin">remove</button></li>
-            <li class="text">Get Job <button class="fin">remove</button></li>
-            <li class="text">Learn Typescript, Python <button class="fin">remove</button></li>
-            <li class="text">Learn Vue, Django <button class="fin">remove</button></li>
-        </ul>
-    </div>
-
+    <main class="container">
+        <!--INTRO-->
+        <section class="row mx-auto p-2">
+            <h1 class="col-12 m-3 p-3 text-center">TODO LIST</h1>
+            <div class="col-12 d-flex justify-content-between">
+                <p class="p-2 text-center">Type something to do in the text field.</p>
+                <p class="p-2 text-center">Press remove when you no longer want to do.</p>
+            </div>
+        </section>
+        <!--BUTTON-->
+        <section class="row mx-auto my-5 p-3 w-25">
+            <input id="userinput" type="text" placeholder="enter items" class="m-2">
+            <button id="enter" type="button" class="btn btn-primary m-2">Enter</button>
+        </section>
+        <!--LIST-->
+        <section class="list-section row mx-auto p-2 w-75 shadow">
+            <ul class="text">
+                <li class="list">
+                    Buy food
+                    <button class="fin">remove</button>
+                </li>
+                <li class="list">
+                    Make food
+                    <button class="fin">remove</button>
+                </li>
+                <li class="list">
+                    Eat food
+                    <button class="fin">remove</button>
+                </li>
+                <li class="list">
+                    Sleep
+                    <button class="fin">remove</button>
+                </li>
+            </ul>
+        </section>
+    </main>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
