@@ -6,6 +6,20 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+/*h1 styiling*/
+ h1 {
+    background: rgba(133, 0, 156,0.25);
+    color: white;
+    border-radius: 10px; 
+ }
+
+/*p styling*/
+p {
+    background: rgba(133, 0, 156,0.25);
+    color: white;
+    border-radius: 10px;
+}
+
 /*Background for list*/
 .list-section{
     background-color: rgba(133, 0, 156,0.25);
@@ -16,6 +30,14 @@ body {
     margin: 0.5em;
     display: flex;
     justify-content:space-between;
+    color:rgb(108, 1, 185);
+    font-weight: bold;
+}
+
+.fin {
+    border-radius: 10px;
+    background-color: rgba(108, 1, 185,0.25);
+    color: white;
 }
 
 /* created done class*/
@@ -28,3 +50,4 @@ body {
     list-style: none;
     justify-items: start;
 }
+
