@@ -1,0 +1,31 @@
+.todoCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.2rem solid #aaa;
+    width: 20rem;
+    height: 20rem;
+    margin: 1rem;
+}
+
+.keys {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.keys > p {
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+button {
+    margin-bottom: 1rem;
+    background-color: #000;
+    color:aliceblue;
+    box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.5), 0 -6px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+}

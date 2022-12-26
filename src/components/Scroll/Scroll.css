@@ -1,0 +1,15 @@
+.todoScroll {
+    margin-top: 5rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border: 0.1rem solid #aeaeae;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+.todoScroll::-webkit-scrollbar {
+    display: none;
+}
