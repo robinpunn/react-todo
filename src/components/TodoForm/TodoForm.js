@@ -1,57 +1,42 @@
-  import React from 'react';
-  import './TodoForm.css'
+import React from 'react';
+import './TodoForm.css'
 
-  class TodoForm extends React.Component {
+class TodoForm extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = { todo: { todo: '', completed: false }}
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleKeyPress = this.handleKeyPress.bind(this)
+        this.state = {
+            todo: ''
+        }
     }
 
-
-
-    handleChange(event) {
-      // set state of todo
-      this.setState({ todo: { todo: event.target.value, completed: false } });
-    }
-
-    handleSubmit(event) {
-      // prevent refresh after submit
-      event.preventDefault();
-      // Add the todo item to the list
-      if  (this.state.todo.todo.length > 0) {
-        this.props.addTodo(this.state.todo);
-      }
-      // Clear the input field
-      this.setState({ todo: { todo: '', completed: false } })
-    }
-
-    handleKeyPress(event) {
-      if (event.keyCode === 13 && this.state.todo.todo.length > 0) {
-          this.handleSubmit(event);
-      }
+  handleChange = (event) => {
+    this.setState({todo: event.target.value});
   }
 
-    render() {
-      return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-              <input
-                  className='inputTodo'
-                  type="text"
-                  value={this.state.todo.todo}
-                  onChange={this.handleChange}
-                  onKeyPress={this.handleKeyPress}
-                  placeholder="Enter todo..."
-                  autoFocus
-              />
-          </form>
-        </div>
-      );
-    }
+  handleSubmit = (event) => {
+    event.preventDefault();
+    // Add the todo item to the list
+    this.props.addTodo(this.state.todo);
+    console.log(this.state.todo)
+    // Clear the input field
+    this.setState({todo: ''});
   }
 
-  export default TodoForm;
+  render() {
+    return (
+        <form onSubmit={this.handleSubmit}>
+            <input
+                className='inputTodo'
+                type="text"
+                value={this.state.todo}
+                onChange={this.handleChange}
+                placeholder="Enter todo..."
+                autofocus={true}
+            />
+        </form>
+    );
+  }
+}
+
+export default TodoForm;
