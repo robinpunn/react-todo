@@ -1,23 +1,31 @@
 form {
-    margin: 1rem auto;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 80%;
-    min-height: 10rem;
-    max-height: 20rem;
+    width: 50vw;
+    margin: auto;
+}
+
+.inputTodo {
+    padding: 1rem 2rem;
     background-color: #333;
-    color: #fff;
+    margin: 0 auto;
+    width: 50vw;
+    color: white;
+    border: 0.1rem solid #aeaeae;
     border-radius: 10px;
-    box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
-.directions {
-    margin: 0.5rem 0 0 0;
+
+@media (min-width: 40rem) {
+    form {
+        width: 50vw;
+        margin: auto;
+    }
+    .inputTodo {
+        width: 50vw;
+        margin: 0 auto;
+    }
 }
 
-.input {
-    margin: 0 0.25rem;
-    padding: 1rem;
-}
