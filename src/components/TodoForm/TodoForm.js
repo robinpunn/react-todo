@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import React from 'react';
 import './TodoForm.css'
 
 /* create a component that will handle the input of todos*/

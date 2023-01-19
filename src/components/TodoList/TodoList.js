@@ -47,17 +47,6 @@ const TodoList = () => {
       setRemainingTodos(todos.filter(todo => !todo.isCompleted).length);
     }, [todos]);
 
-    //create a function to handle the filter
-    // const handleFilter = (e) => {
-    //   setSelectedFilter(e.target.innerText.toLowerCase());
-    //   if (selectedFilter === "all") {
-    //     setRemainingTodos(todos.filter(todo => !todo.isCompleted).length);
-    //   } else if (selectedFilter === "active") {
-    //     setRemainingTodos(todos.filter((todo) => !todo.isCompleted).length);
-    //   } else {
-    //     setRemainingTodos(todos.filter((todo) => todo.isCompleted).length);
-    //   }
-    // }
 
     //render function
     return (
@@ -82,12 +71,10 @@ const TodoList = () => {
                 />
               ))}
             </Scroll>
-            {/*<TodoFilter
+            <TodoFilter
               todos={todos}
-              setRemainingTodos={setRemainingTodos}
-              selectedFilter={selectedFilter}
               setSelectedFilter={setSelectedFilter}
-            />*/}
+              setTodos={setTodos}/>
         </div>
     )
 }

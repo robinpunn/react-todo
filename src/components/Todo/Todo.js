@@ -27,7 +27,7 @@ const Todo = ({ todo, removeTodo, toggleComplete }) => {
           {editing ? (
             <EditTodo text={todo.text} onSave={handleEditSave} onCancel={handleEditCancel} />
           ) : (
-          <p  key={todo.id}>{todo.text}</p>
+            <p  key={todo.id}>{todo.text}</p>
           )}
         </div>
         <div className='editRemove'>
