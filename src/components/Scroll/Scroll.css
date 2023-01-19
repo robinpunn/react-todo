@@ -1,5 +1,5 @@
 .todoScroll {
-    height: 25rem;
+    height: 22rem;
     width: 90vw;
     margin: 2rem auto;
     border: 0.1rem solid #aeaeae;
@@ -18,7 +18,7 @@
 
 @media (min-width: 40rem) {
     .todoScroll {
-        height: 30rem;
+        height: 25rem;
         width: 50vw;
     }
 }

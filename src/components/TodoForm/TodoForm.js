@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import './TodoForm.css'
 
 /* create a component that will handle the input of todos*/
-const TodoForm = ({ addTodo }) => {
+const TodoForm = ({ addTodo}) => {
     //create a state for the input
     const [input, setInput] = React.useState('');
 

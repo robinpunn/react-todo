@@ -1,0 +1,46 @@
+.filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 90vw;
+    border: 0.1rem solid #aeaeae;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 0 1rem;
+}
+
+.filter-click {
+    color: #aeaeae;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.filter-click:hover {
+    cursor: pointer;
+    color: beige;
+}
+
+@media (min-width: 25rem) {
+    .filter {
+        width: 70vw;
+    }
+}
+
+@media (min-width: 40rem) {
+    .filter {
+        width: 50vw;
+    }
+    .filter-options {
+        width: 33%;
+    }
+}
