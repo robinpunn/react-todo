@@ -1,6 +1,6 @@
 .todoScroll {
-    height: 20rem;
-    width: 75vw;
+    height: 25rem;
+    width: 90vw;
     margin: 2rem auto;
     border: 0.1rem solid #aeaeae;
     border-radius: 10px;
@@ -10,9 +10,15 @@
     display: none;
 }
 
+@media (min-width: 25rem) {
+    .todoScroll {
+        width: 70vw;
+    }
+}
+
 @media (min-width: 40rem) {
     .todoScroll {
-        height: 25rem;
+        height: 30rem;
         width: 50vw;
     }
 }

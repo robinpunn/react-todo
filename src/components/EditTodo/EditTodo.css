@@ -1,0 +1,16 @@
+.edit {
+    padding: 1rem 2rem;
+    background-color: #333;
+    margin: 0 auto;
+    width: 15vw;
+    color: white;
+    border: 0.1rem solid #aeaeae;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width:40rem) {
+    .edit {
+        width: 25vw;
+    }
+}

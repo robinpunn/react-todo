@@ -2,15 +2,15 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50vw;
+    width: 90vw;
     margin: auto;
 }
 
-.inputTodo {
+.todo-input {
     padding: 1rem 2rem;
     background-color: #333;
     margin: 0 auto;
-    width: 50vw;
+    width: 90vw;
     color: white;
     border: 0.1rem solid #aeaeae;
     border-radius: 10px;
@@ -18,14 +18,22 @@ form {
 }
 
 
+@media (min-width: 25rem) {
+    form {
+        width: 70vw;
+    }
+    .inputTodo {
+        width: 70vw;
+    }
+}
+
+
 @media (min-width: 40rem) {
     form {
         width: 50vw;
-        margin: auto;
     }
     .inputTodo {
         width: 50vw;
-        margin: 0 auto;
     }
 }
 

@@ -1,42 +1,44 @@
 import React from 'react';
 import './TodoForm.css'
 
-class TodoForm extends React.Component {
+/* create a component that will handle the input of todos*/
+const TodoForm = ({ addTodo }) => {
+    //create a state for the input
+    const [input, setInput] = React.useState('');
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            todo: ''
+    //create a function to handle the input change
+    const handleChange = (event) => {
+        setInput(event.target.value);
+    }
+    //create a function to handle the submit only if the input is not empty
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (input.trim()) { //if the input is not empty
+            addTodo(input);  //add the todo needs an argument
+            setInput(''); //reset the input to empty
         }
     }
 
-  handleChange = (event) => {
-    this.setState({todo: event.target.value});
-  }
+    //submie the form when the user hits enter
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleSubmit(event);
+        }
+    }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    // Add the todo item to the list
-    this.props.addTodo(this.state.todo);
-    console.log(this.state.todo)
-    // Clear the input field
-    this.setState({todo: ''});
-  }
-
-  render() {
+    //render function
     return (
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={handleSubmit} onKeyPress={handleKeyDown} >
             <input
-                className='inputTodo'
+                className='todo-input'
                 type="text"
-                value={this.state.todo}
-                onChange={this.handleChange}
-                placeholder="Enter todo..."
-                autofocus={true}
+                placeholder='Add a todo...'
+                value={input}
+                onChange={handleChange}
+                autoFocus={true}
             />
         </form>
-    );
-  }
+    )
 }
 
 export default TodoForm;

@@ -1,19 +1,42 @@
-import React from 'react'
-import { FaTrash, FaEdit } from 'react-icons/fa';
+import React, {useState} from 'react'
+import { FaTrash, FaEdit} from 'react-icons/fa';
 import './Todo.css'
+import EditTodo from '../EditTodo/EditTodo';
 
-const Todo = ({ todo, index, removeTodo }) => {
+
+const Todo = ({ todo, removeTodo, toggleComplete }) => {
+    //create a state for the edit
+    const [editing, setEditing] = useState(false);
+
+    //create a function to handle the edit
+    const handleEditSave = (newText) => {
+        setEditing(true);
+        todo.text = newText
+    }
+
+    //handle edit cancel
+    const handleEditCancel = () => {
+        setEditing(false);
+    }
+
+    //render function
     return (
-      <div className="todoCard">
-          <div className='keys'>
-            {/*checkbox goes here*/}
-            <p key={index}>{todo}</p>
-          </div>
-          <div className='editRemove'>
-            <FaTrash className='removeTodo' onClick={() => removeTodo(index)}/>
-          </div>
+      <div className={todo.isCompleted ? 'completed todoCard':'todoCard' }>
+        <div className='keys'>
+          <input type="checkbox" onChange={() => toggleComplete(todo.id)} />
+          {editing ? (
+            <EditTodo text={todo.text} onSave={handleEditSave} onCancel={handleEditCancel} />
+          ) : (
+          <p  key={todo.id}>{todo.text}</p>
+          )}
+        </div>
+        <div className='editRemove'>
+          <FaEdit className={todo.isCompleted ? 'hidden' : 'editTodo'} onClick={() => setEditing(true)} />
+          <FaTrash className={todo.isCompleted ? 'removeTodo highlight' : 'removeTodo'} onClick={() => removeTodo(todo.id)} />
+        </div>
       </div>
-    );
-  };
-  
-  export default Todo;
+    )
+
+}
+
+export default Todo;
