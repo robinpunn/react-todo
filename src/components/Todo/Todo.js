@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import { FaTrash, FaEdit} from 'react-icons/fa';
+import { FaTrash, FaEdit, FaCircle} from 'react-icons/fa';
 import './Todo.css'
 import EditTodo from '../EditTodo/EditTodo';
 
 
-const Todo = ({ todo, removeTodo, toggleComplete }) => {
+const Todo = ({ todo, removeTodo, toggleComplete}) => {
     //create a state for the edit
     const [editing, setEditing] = useState(false);
 
@@ -23,7 +23,16 @@ const Todo = ({ todo, removeTodo, toggleComplete }) => {
     return (
       <div className={todo.isCompleted ? 'completed todoCard':'todoCard' }>
         <div className='keys'>
-          <input type="checkbox" onChange={() => toggleComplete(todo.id)} />
+          {/*<input
+            type="checkbox" onChange={() => toggleComplete(todo.id)}
+            checked={todo.isCompleted}
+            className='checkComplete'
+          />*/}
+          {/*<FaCircle type="checkbox" onChange={() => toggleComplete(todo.id)} />*/}
+          <FaCircle
+            className={todo.isCompleted ? 'fa-circle' : 'fa-circle-o'}
+            onClick={() => toggleComplete(todo.id)}
+          />
           {editing ? (
             <EditTodo text={todo.text} onSave={handleEditSave} onCancel={handleEditCancel} />
           ) : (

@@ -74,7 +74,8 @@ const TodoList = () => {
             <TodoFilter
               todos={todos}
               setSelectedFilter={setSelectedFilter}
-              setTodos={setTodos}/>
+              setTodos={setTodos}
+            />
         </div>
     )
 }

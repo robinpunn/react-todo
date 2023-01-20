@@ -1,8 +1,8 @@
 .filter {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     width: 90vw;
     border: 0.1rem solid #aeaeae;
     border-radius: 10px;
@@ -14,7 +14,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 75%;
     margin: 0 1rem;
 }
 
@@ -46,9 +46,17 @@
 
 @media (min-width: 40rem) {
     .filter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
         width: 50vw;
     }
     .filter-options {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
         width: 33%;
     }
 }

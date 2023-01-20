@@ -12,6 +12,16 @@
     margin: 0.5rem;
 }
 
+.fa-circle {
+    color: #111;
+    margin: 0.5rem;
+  }
+
+  .fa-circle-o {
+    color: #ccc;
+    margin: 0.5rem;
+  }
+
 .keys {
     text-align: left;
     margin: 0;
