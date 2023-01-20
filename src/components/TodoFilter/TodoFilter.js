@@ -28,7 +28,7 @@ const TodoFilter = ({ todos, setSelectedFilter, setTodos }) => {
                 </label>
             </div>
             <div className="clear-completed">
-                <label className="filter-click" onClick={handleClearCompleted}>
+                <label className="filter-click clear" onClick={handleClearCompleted}>
                     <p>Clear Completed</p>
                 </label>
             </div>

@@ -12,16 +12,6 @@
     margin: 0.5rem;
 }
 
-.fa-circle {
-    color: #111;
-    margin: 0.5rem;
-  }
-
-  .fa-circle-o {
-    color: #ccc;
-    margin: 0.5rem;
-  }
-
 .keys {
     text-align: left;
     margin: 0;
@@ -63,4 +53,19 @@
 
 .hidden {
     display: none;
+}
+
+
+.fa-circle {
+    color: linear-gradient(to top, #ff416c, #ff4b2b) !important;
+    margin: 0.5rem;
+  }
+
+.fa-circle-o {
+    color: #ccc;
+    margin: 0.5rem;
+}
+
+.fa-circle:hover, .fa-circle-o:hover {
+    cursor: pointer;
 }

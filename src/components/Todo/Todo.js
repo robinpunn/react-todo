@@ -23,12 +23,6 @@ const Todo = ({ todo, removeTodo, toggleComplete}) => {
     return (
       <div className={todo.isCompleted ? 'completed todoCard':'todoCard' }>
         <div className='keys'>
-          {/*<input
-            type="checkbox" onChange={() => toggleComplete(todo.id)}
-            checked={todo.isCompleted}
-            className='checkComplete'
-          />*/}
-          {/*<FaCircle type="checkbox" onChange={() => toggleComplete(todo.id)} />*/}
           <FaCircle
             className={todo.isCompleted ? 'fa-circle' : 'fa-circle-o'}
             onClick={() => toggleComplete(todo.id)}

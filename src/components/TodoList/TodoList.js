@@ -47,35 +47,63 @@ const TodoList = () => {
       setRemainingTodos(todos.filter(todo => !todo.isCompleted).length);
     }, [todos]);
 
+    //message to show when there is no todo
+    const message = (
+      <div className='message'>
+        {selectedFilter === "all" ? (
+          <p className='none'>Enter a todo...</p>
+        ) :
+          selectedFilter === "active" ? (
+            <p className='none'>You dont have any active todos...</p>
+        ) :
+          selectedFilter === "complete" ? (
+            <p className='none'>You haven't completed any todos...</p>
+        ) : null}
+      </div>
+    )
 
     //render function
     return (
         <div className='container'>
             <h4 className='header'>{remainingTodos} todos left</h4>
             <TodoForm addTodo={addTodo} />
-            <Scroll>
-                {todos.filter(todo => {
-                  if (selectedFilter === "all") {
-                    return true;
-                  } else if (selectedFilter === "active") {
-                    return !todo.isCompleted;
-                  } else {
-                    return todo.isCompleted;
-                  }
-                }).map(todo => (
-                <Todo
-                  key={todo.id}
-                  todo={todo}
-                  removeTodo={removeTodo}
-                  toggleComplete={toggleComplete}
-                />
-              ))}
-            </Scroll>
             <TodoFilter
               todos={todos}
               setSelectedFilter={setSelectedFilter}
               setTodos={setTodos}
             />
+            <Scroll>
+              {todos.filter(todo => {
+                  if (selectedFilter === "all") {
+                    console.log("selectedFilter is all");
+                    return true;
+                  } else if (selectedFilter === "active") {
+                    console.log("selectedFilter is active");
+                    return !todo.isCompleted;
+                  } else {
+                    console.log("selectedFilter is complete");
+                    return todo.isCompleted;
+                  }
+                  }).length ?
+                    todos.filter(todo => {
+                      if (selectedFilter === "all") {
+                        return true;
+                      } else if (selectedFilter === "active") {
+                        return !todo.isCompleted;
+                      } else {
+                        return todo.isCompleted;
+                      }
+                  }).map(todo => (
+                    <Todo
+                      key={todo.id}
+                      todo={todo}
+                      removeTodo={removeTodo}
+                      toggleComplete={toggleComplete}
+                    />
+                  )) :
+                    message
+              }
+            </Scroll>
         </div>
     )
 }

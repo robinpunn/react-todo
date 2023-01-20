@@ -3,7 +3,7 @@ form {
     justify-content: center;
     align-items: center;
     width: 90vw;
-    margin: auto;
+    margin: 1rem auto;
 }
 
 .todo-input {
