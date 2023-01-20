@@ -4,7 +4,9 @@
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
-    border-bottom: 0.1rem solid #aaa;
+    border: 0.05rem solid #aaa;
+    border-left: none;
+    border-right: nonse;
     margin: 0.1rem;
 }
 

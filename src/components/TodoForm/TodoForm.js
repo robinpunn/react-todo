@@ -28,7 +28,7 @@ const TodoForm = ({ addTodo}) => {
 
     //render function
     return (
-        <form onSubmit={handleSubmit} onKeyPress={handleKeyDown} >
+        <form className='input-form' onSubmit={handleSubmit} onKeyPress={handleKeyDown} >
             <input
                 className='todo-input'
                 type="text"
