@@ -1,0 +1,9 @@
+/*button turns red on hover*/
+.clear-btn {
+    margin:1rem;
+}
+
+.clear-btn:hover {
+  background-color: red;
+  border-color: red;
+}

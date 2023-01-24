@@ -3,14 +3,16 @@ import './TodoFilter.css'
 
 const TodoFilter = ({ todos, setSelectedFilter, setTodos }) => {
     //create a function to handle the filter
-    function handleFilter(e) {
+    const handleFilter = (e) => {
         setSelectedFilter(e.target.innerText.toLowerCase());
+        document.querySelector('.todo-input').focus();
       }
 
     //remove all completed todos
-    function handleClearCompleted() {
+    const handleClearCompleted = () => {
         const newTodos = todos.filter(todo => !todo.isCompleted);
         setTodos(newTodos);
+        document.querySelector('.todo-input').focus();
     }
 
     //render function

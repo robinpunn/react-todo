@@ -5,6 +5,7 @@ import Todo from '../Todo/Todo.js';
 import Scroll from '../Scroll/Scroll';
 import './TodoList.css'
 import TodoFilter from '../TodoFilter/TodoFilter';
+import Clear from '../Clear/Clear.js';
 
 //use reach hooks to create a stateful component
 const TodoList = () => {
@@ -12,7 +13,6 @@ const TodoList = () => {
     const [todos, setTodos] = useState(() => {
       // Check if there are any saved todos in local storage
       const savedTodos = localStorage.getItem('todos');
-
       // If there are, return the saved todos
       if (savedTodos) {
         try {
@@ -22,7 +22,6 @@ const TodoList = () => {
           localStorage.removeItem("todos");
         }
       }
-
       // If there aren't, return an empty array
       return [];
     });
@@ -60,6 +59,14 @@ const TodoList = () => {
       setRemainingTodos(newTodos.filter(todo => !todo.isCompleted).length);
       console.log(todos)
       console.log(remainingTodos)
+    }
+
+    //create a function to clear all todos
+    const clearTodos = () => {
+      setTodos([]);
+      localStorage.removeItem('todos')
+      // focus on the input
+      document.querySelector('.todo-input').focus();
     }
 
     //use effect to update the remaining todos
@@ -124,6 +131,7 @@ const TodoList = () => {
                     message
               }
             </Scroll>
+            <Clear clearTodos={clearTodos}/>
         </div>
     )
 }
