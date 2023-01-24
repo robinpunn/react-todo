@@ -9,11 +9,31 @@ import TodoFilter from '../TodoFilter/TodoFilter';
 //use reach hooks to create a stateful component
 const TodoList = () => {
     //create a state for the todos
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState(() => {
+      // Check if there are any saved todos in local storage
+      const savedTodos = localStorage.getItem('todos');
+
+      // If there are, return the saved todos
+      if (savedTodos) {
+        try {
+          return JSON.parse(savedTodos);
+        } catch (err) {
+          console.error(err);
+          localStorage.removeItem("todos");
+        }
+      }
+
+      // If there aren't, return an empty array
+      return [];
+    });
     //create a state for remaining todos
     const [remainingTodos, setRemainingTodos] = useState(0);
     //create a state for the filter
     const [selectedFilter, setSelectedFilter] = useState('all');
+
+    useEffect(() => {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos]);
 
     //create a function to add a todo, new todo should be on top of the list
     const addTodo = (text) => {
