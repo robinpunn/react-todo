@@ -1,5 +1,4 @@
 import React from "react";
-import "./Clear.css";
 
 const Clear = ({ clearTodos }) => {
   return (

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import uuid from "react-uuid";
-import TodoForm from "../TodoForm/TodoForm.js";
-import Todo from "../Todo/Todo.js";
-import Scroll from "../Scroll/Scroll";
-import "./TodoList.css";
-import TodoFilter from "../TodoFilter/TodoFilter";
-import SideBar from "../SideBar/SideBar.js";
+import TodoForm from "./features/input/TodoForm.js";
+import Todo from "./features/addRemove/Todo.js";
+import Scroll from "./components/Scroll/Scroll";
+import TodoFilter from "./features/filter/TodoFilter";
+import SideBar from "./components/SideBar/SideBar.js";
 
 //use reach hooks to create a stateful component
 const TodoList = () => {

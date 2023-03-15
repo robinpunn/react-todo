@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./TodoForm.css";
 
 /* create a component that will handle the input of todos*/
 const TodoForm = ({ addTodo }) => {

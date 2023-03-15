@@ -21,3 +21,287 @@ button {
   border-radius: 10px;
   cursor: pointer;
 }
+
+/*TodoList*/
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+}
+
+.message {
+  text-align: center;
+  margin: 10rem 1rem;
+}
+
+@media (min-width: 25rem) {
+  .todo-container {
+    width: 70vw;
+  }
+}
+
+@media (min-width: 40rem) {
+  .main-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .todo-container {
+    width: 50vw;
+    margin: 0 0 0 30rem;
+  }
+}
+
+/*Todo Form*/
+.input-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  margin: 1rem auto;
+}
+
+.todo-input {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  margin: 0 auto;
+  width: 90vw;
+  color: white;
+  border: 0.1rem solid #aeaeae;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 25rem) {
+  input-form {
+    width: 70vw;
+  }
+  .inputTodo {
+    width: 70vw;
+  }
+}
+
+@media (min-width: 40rem) {
+  .input-form {
+    width: 50vw;
+  }
+  .inputTodo {
+    width: 50vw;
+  }
+}
+
+/*Todo Filter*/
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  border: 0.1rem solid #aeaeae;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  margin: 1rem auto;
+  margin-bottom: 0;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+  margin: 0 1rem;
+}
+
+.filter-click {
+  color: #aeaeae;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.filter-click:hover {
+  cursor: pointer;
+  color: beige;
+}
+
+.clear-completed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 1rem;
+}
+
+@media (min-width: 25rem) {
+  .filter {
+    width: 70vw;
+  }
+}
+
+@media (min-width: 40rem) {
+  .filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 50vw;
+  }
+  .filter-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 33%;
+  }
+}
+
+/*Todo*/
+.todoCard {
+  display: flex;
+  min-height: 3.5rem;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  border: 0.05rem solid #aaa;
+  border-left: none;
+  border-right: nonse;
+  margin: 0.1rem;
+}
+
+.checkComplete {
+  margin: 0.5rem;
+}
+
+.keys {
+  text-align: left;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.editRemove {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.editTodo {
+  padding: 0.25rem;
+  cursor: pointer;
+  z-index: 3;
+  margin-left: auto;
+}
+
+.removeTodo {
+  margin: 0.1rem 0.1rem 0.1rem auto;
+  padding: 0.25rem;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.completed {
+  color: rgb(62, 63, 69);
+  text-decoration: line-through;
+  background-color: #777;
+}
+
+.highlight {
+  color: aliceblue;
+}
+
+.hidden {
+  display: none;
+}
+
+.fa-circle {
+  color: linear-gradient(to top, #ff416c, #ff4b2b) !important;
+  margin: 0.5rem;
+}
+
+.fa-circle-o {
+  color: #ccc;
+  margin: 0.5rem;
+}
+
+.fa-circle:hover,
+.fa-circle-o:hover {
+  cursor: pointer;
+}
+
+/*Scroll*/
+.todoScroll {
+  height: 12rem;
+  width: 90vw;
+  margin: 1rem auto;
+  margin-top: 0;
+  border: 0.1rem solid #aeaeae;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5), 0 8px 0 0 rgba(0, 0, 0, 0.5);
+}
+.todoScroll::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 25rem) {
+  .todoScroll {
+    width: 70vw;
+  }
+}
+
+@media (min-width: 40rem) {
+  .todoScroll {
+    height: 25rem;
+    width: 50vw;
+  }
+}
+
+/*Edit*/
+.edit {
+  padding: 1rem 2rem;
+  background-color: #333;
+  margin: 0 auto;
+  width: 15vw;
+  color: white;
+  border: 0.1rem solid #aeaeae;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 40rem) {
+  .edit {
+    width: 25vw;
+  }
+}
+
+/*Sidebar New Todo*/
+.new-btn {
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+}
+
+.new-btn:hover {
+  background-color: rgb(144, 0, 255);
+  border-color: rgb(144, 0, 255);
+}
+
+/*Clear*/
+.clear-btn {
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+}
+
+.clear-btn:hover {
+  background-color: red;
+  border-color: red;
+}

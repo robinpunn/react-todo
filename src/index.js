@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {Provider} from 'react-redux'
-import {createStore} from 'redux'
+import store from "./app/store";
+import { Provider } from "react-redux";
 import "./index.css";
-import TodoList from "./components/TodoList/TodoList";
-
-const store = createStore(rootReducer)
+import TodoList from "./TodoList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<TodoList />);
+root.render(
+  <Provider store={store}>
+    <TodoList />
+  </Provider>
+);
