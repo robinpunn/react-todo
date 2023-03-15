@@ -4,6 +4,7 @@ import editReducer from "../features/edit/editSlice";
 import inputReducer from "../features/input/inputSlice";
 import toggleCompleteReducer from "../features/toggle/toggleSlice";
 import remainingTodosReducer from "../features/remaining/remainingTodosSlice";
+import selectedFilterReducer from "../features/filter/filterSlice";
 
 const rootReducer = combineReducers({
   addRemove: addRemoveReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   input: inputReducer,
   toggleComplete: toggleCompleteReducer,
   remainingTodos: remainingTodosReducer,
+  selectedFilter: selectedFilterReducer,
 });
 
 const store = configureStore({

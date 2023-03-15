@@ -1,7 +1,6 @@
 import React from "react";
-import Clear from "../Clear/Clear.js";
-import NewTodoButton from "../NewTodoButton/NewTodoButton.js";
-import "./SideBar.css";
+import Clear from "../components/Clear.js";
+import NewTodoButton from "../components/NewTodoButton.js";
 
 function SideBar({ clearTodos }) {
   return (
