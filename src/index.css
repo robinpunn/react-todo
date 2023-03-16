@@ -5,6 +5,8 @@ html {
 
 body {
   height: 100%;
+  width: 100%;
+  margin: 0;
   background: linear-gradient(#2a2828, #665d58);
   background-size: contain;
   background-attachment: fixed;
@@ -22,12 +24,20 @@ button {
   cursor: pointer;
 }
 
+.main-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
 /*TodoList*/
 .todo-container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 90vw;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -42,20 +52,20 @@ button {
 
 @media (min-width: 25rem) {
   .todo-container {
-    width: 70vw;
+    width: 100%;
   }
 }
 
 @media (min-width: 40rem) {
   .main-container {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
   .todo-container {
-    width: 50vw;
-    margin: 0 0 0 30rem;
+    width: 50%;
+    margin: 2rem auto;
   }
 }
 
@@ -80,10 +90,10 @@ button {
 }
 
 @media (min-width: 25rem) {
-  input-form {
+  .input-form {
     width: 70vw;
   }
-  .inputTodo {
+  .todo-input {
     width: 70vw;
   }
 }
@@ -92,7 +102,7 @@ button {
   .input-form {
     width: 50vw;
   }
-  .inputTodo {
+  .todo-input {
     width: 50vw;
   }
 }
@@ -140,12 +150,6 @@ button {
   margin: 0 1rem;
 }
 
-@media (min-width: 25rem) {
-  .filter {
-    width: 70vw;
-  }
-}
-
 @media (min-width: 40rem) {
   .filter {
     display: flex;
@@ -181,11 +185,22 @@ button {
 }
 
 .keys {
-  text-align: left;
   margin: 0;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-around;
+}
+
+.keys > svg {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.keys > p {
+  margin: 1.5rem;
+  padding: 0.5rem;
 }
 
 .editRemove {
@@ -240,10 +255,9 @@ button {
 
 /*Scroll*/
 .todoScroll {
-  height: 12rem;
-  width: 90vw;
-  margin: 1rem auto;
-  margin-top: 0;
+  height: 18rem;
+  width: 90%;
+  margin: 0 auto 1rem auto;
   border: 0.1rem solid #aeaeae;
   border-top: none;
   border-radius: 0 0 10px 10px;
@@ -255,7 +269,7 @@ button {
 
 @media (min-width: 25rem) {
   .todoScroll {
-    width: 70vw;
+    width: 90%;
   }
 }
 
@@ -304,15 +318,15 @@ button {
   display: none;
 }
 
-@media (min-width: 40rem) {
+/* @media (min-width: 40rem) {
   .sideBar {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
     width: 20vw;
   }
-}
+} */
 
 /*Sidebar New Todo*/
 .new-btn {
