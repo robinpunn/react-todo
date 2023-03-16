@@ -1,15 +1,15 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import addRemoveReducer from "../features/addRemove/addRemoveSlice";
+import addInputReducer from "../features/input/addInputSlice";
 import editReducer from "../features/edit/editSlice";
-import inputReducer from "../features/input/inputSlice";
+import removeReducer from "../features/remove/removeSlice";
 import toggleCompleteReducer from "../features/toggle/toggleSlice";
 import remainingTodosReducer from "../features/remaining/remainingTodosSlice";
 import selectedFilterReducer from "../features/filter/filterSlice";
 
 const rootReducer = combineReducers({
-  addRemove: addRemoveReducer,
+  addInput: addInputReducer,
   edit: editReducer,
-  input: inputReducer,
+  remove: removeReducer,
   toggleComplete: toggleCompleteReducer,
   remainingTodos: remainingTodosReducer,
   selectedFilter: selectedFilterReducer,

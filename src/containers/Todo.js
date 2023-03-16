@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { FaTrash, FaEdit, FaCircle } from "react-icons/fa";
-import EditTodo from "../edit/EditTodo.js";
+import EditTodo from "../features/edit/EditTodo.js";
+import { EditIcon } from "../features/edit/EditIcon.js";
+import RemoveIcon from "../features/remove/RemoveIcon.js";
+import ToggleComplete from "../features/toggle/ToggleComplete.js";
 
 const Todo = ({ todo, removeTodo, toggleComplete }) => {
   //create a state for the edit
@@ -21,10 +23,7 @@ const Todo = ({ todo, removeTodo, toggleComplete }) => {
   return (
     <div className={todo.isCompleted ? "completed todoCard" : "todoCard"}>
       <div className="keys">
-        <FaCircle
-          className={todo.isCompleted ? "fa-circle" : "fa-circle-o"}
-          onClick={() => toggleComplete(todo.id)}
-        />
+        <ToggleComplete toggleComplete={toggleComplete} todo={todo} />
         {editing ? (
           <EditTodo
             text={todo.text}
@@ -36,14 +35,8 @@ const Todo = ({ todo, removeTodo, toggleComplete }) => {
         )}
       </div>
       <div className="editRemove">
-        <FaEdit
-          className={todo.isCompleted ? "hidden" : "editTodo"}
-          onClick={() => setEditing(true)}
-        />
-        <FaTrash
-          className={todo.isCompleted ? "removeTodo highlight" : "removeTodo"}
-          onClick={() => removeTodo(todo.id)}
-        />
+        <EditIcon todo={todo} setEditing={setEditing} />
+        <RemoveIcon todo={todo} removeTodo={removeTodo} />
       </div>
     </div>
   );

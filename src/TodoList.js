@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import uuid from "react-uuid";
 import TodoForm from "./features/input/TodoForm.js";
-import Todo from "./features/addRemove/Todo.js";
+import Todo from "./containers/Todo.js";
 import Scroll from "./containers/Scroll";
 import TodoFilter from "./features/filter/TodoFilter";
 import SideBar from "./containers/SideBar.js";

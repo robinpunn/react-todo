@@ -6,8 +6,8 @@ const initialState = {
   todos: [],
 };
 
-const addRemoveSlice = createSlice({
-  name: "addRemove",
+const addInputSlice = createSlice({
+  name: "addInput",
   initialState,
   reducers: {
     addTodo: (state, action) => {
@@ -16,16 +16,19 @@ const addRemoveSlice = createSlice({
         text: action.payload.text,
         isCompleted: false,
       };
-      state.todos = [newTodo, ...state.todos];
+      state.todos = [newTodo, ...state.todos]; //state.todos.push(newTodo);
       remainingTodos(state);
     },
-    removeTodo: (state, action) => {
-      state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
+    input: (state, action) => {
+      const todo = state.todos.find((todo) => todo.id !== action.payload.id);
+      if (todo) {
+        todo.text = action.payload.text;
+      }
       remainingTodos(state);
     },
   },
 });
 
-export const { addTodo, removeTodo } = addRemoveSlice.actions;
+export const { addTodo, input } = addInputSlice.actions;
 
-export default addRemoveSlice.reducer;
+export default addInputSlice.reducer;
