@@ -11,7 +11,10 @@ import FilterMessage from "./features/filter/FilterMessage.js";
 const TodoList = () => {
   // const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos.todos);
-  console.log(todos);
+  const selectedFilter = useSelector(
+    (state) => state.selectedFilter.selectedFilter
+  );
+  console.log("selectedFilter:", selectedFilter);
 
   // function loadSavedTodos() {
   //   const savedTodos = localStorage.getItem("todos");
@@ -53,7 +56,7 @@ const TodoList = () => {
   //create a state for remaining todos
   // const [remainingTodos, setRemainingTodos] = useState(0);
   //create a state for the filter
-  const [selectedFilter, setSelectedFilter] = useState("all");
+  // const [selectedFilter, setSelectedFilter] = useState("all");
 
   //create a function to add a todo, new todo should be on top of the list
   /*const addTodo = (text) => {
@@ -106,12 +109,11 @@ const TodoList = () => {
       />
       <div className="todo-container">
         <h4 className="header">
-          {todos && todos.filter((todo) => !todo.isCompleted).length} todos left
+          {todos.filter((todo) => !todo.isCompleted).length} todos left
         </h4>
         <TodoFilter />
         <Scroll>
-          {todos &&
-          todos.filter((todo) => {
+          {todos.filter((todo) => {
             if (selectedFilter === "all") {
               console.log("selectedFilter is all");
               return true;

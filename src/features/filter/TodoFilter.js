@@ -1,22 +1,26 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectedFilter } from "./filterSlice";
+import { setTodos } from "../todos/todosSlice";
 
 const TodoFilter = () => {
+  const todos = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
 
   //create a function to handle the filter
   const handleFilter = (e) => {
+    console.log(selectedFilter, "e:", e.target.innerText.toLowerCase());
     dispatch(selectedFilter(e.target.innerText.toLowerCase()));
     document.querySelector(".todo-input").focus();
   };
 
   //remove all completed todos
-  // const handleClearCompleted = () => {
-  //   const newTodos = todos.filter((todo) => !todo.isCompleted);
-  //   setTodos(newTodos);
-  //   document.querySelector(".todo-input").focus();
-  // };
+  const handleClearCompleted = () => {
+    const newTodos = todos.filter((todo) => !todo.isCompleted);
+    console.log(newTodos);
+    dispatch(setTodos({ todos: newTodos }));
+    document.querySelector(".todo-input").focus();
+  };
 
   //render function
   return (
@@ -33,10 +37,7 @@ const TodoFilter = () => {
         </label>
       </div>
       <div className="clear-completed">
-        <label
-          className="filter-click clear"
-          // onClick={handleClearCompleted}
-        >
+        <label className="filter-click clear" onClick={handleClearCompleted}>
           <p>Clear Completed</p>
         </label>
       </div>
