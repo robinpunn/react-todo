@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import EditTodo from "../features/edit/EditTodo.js";
 import { EditIcon } from "../features/edit/EditIcon.js";
-import RemoveIcon from "../features/remove/RemoveIcon.js";
-import ToggleComplete from "../features/toggle/ToggleComplete.js";
+import RemoveIcon from "../components/RemoveIcon.js";
+import ToggleComplete from "../components/ToggleComplete.js";
 
-const Todo = ({ todo, removeTodo, toggleComplete }) => {
+const Todo = ({ todo }) => {
   //create a state for the edit
   const [editing, setEditing] = useState(false);
 
@@ -25,7 +25,7 @@ const Todo = ({ todo, removeTodo, toggleComplete }) => {
   return (
     <div className={todo.isCompleted ? "completed todoCard" : "todoCard"}>
       <div className="keys">
-        <ToggleComplete toggleComplete={toggleComplete} todo={todo} />
+        <ToggleComplete todo={todo} />
         {editing ? (
           <EditTodo
             text={todo.text}
@@ -38,7 +38,7 @@ const Todo = ({ todo, removeTodo, toggleComplete }) => {
       </div>
       <div className="editRemove">
         <EditIcon todo={todo} setEditing={setEditing} />
-        <RemoveIcon todo={todo} removeTodo={removeTodo} />
+        <RemoveIcon todo={todo} />
       </div>
     </div>
   );
