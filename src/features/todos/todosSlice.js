@@ -4,7 +4,9 @@ import uuid from "react-uuid";
 const todosSlice = createSlice({
   name: "todos",
   initialState: {
-    todos: [],
+    todos: localStorage.getItem("todos")
+      ? JSON.parse(localStorage.getItem("todos"))
+      : [],
   },
   reducers: {
     addTodo: (state, action) => {
@@ -29,6 +31,8 @@ const todosSlice = createSlice({
     },
     setTodos: (state, action) => {
       state.todos = action.payload.todos;
+      localStorage.setItem("todos", JSON.stringify(state.todos));
+      console.log("setTodos", state.todos);
     },
   },
 });

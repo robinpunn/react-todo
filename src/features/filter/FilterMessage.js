@@ -1,10 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectedFilter } from "./filterSlice";
 
 const FilterMessage = () => {
   const filter = useSelector((state) => state.selectedFilter.selectedFilter);
-  console.log("filter:", filter);
+  // console.log("filter:", filter);
   return (
     <div className="message">
       {filter === "all" ? (
