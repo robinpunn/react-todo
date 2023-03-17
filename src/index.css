@@ -38,7 +38,7 @@ button {
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .header {
@@ -203,6 +203,13 @@ button {
   padding: 0.5rem;
 }
 
+.edit-input {
+  margin: 1.5rem;
+  padding: 0.5rem;
+  background-color: #000;
+  color: aliceblue;
+}
+
 .editRemove {
   margin-left: auto;
   display: flex;
@@ -255,13 +262,14 @@ button {
 
 /*Scroll*/
 .todoScroll {
-  height: 18rem;
+  height: 20rem;
   width: 90%;
   margin: 0 auto 1rem auto;
   border: 0.1rem solid #aeaeae;
   border-top: none;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5), 0 8px 0 0 rgba(0, 0, 0, 0.5);
+  scrollbar-width: none;
 }
 .todoScroll::-webkit-scrollbar {
   display: none;

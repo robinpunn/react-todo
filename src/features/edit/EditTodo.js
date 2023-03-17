@@ -18,6 +18,7 @@ const EditTodo = ({ text, onCancel, onSave }) => {
   //render function
   return (
     <input
+      className="edit-input"
       type="text"
       value={newText}
       onChange={(event) => setnewText(event.target.value)}

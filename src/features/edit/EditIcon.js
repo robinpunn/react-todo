@@ -5,7 +5,7 @@ export const EditIcon = ({ todo, setEditing }) => {
   return (
     <FaEdit
       className={todo.isCompleted ? "hidden" : "editTodo"}
-      onClick={() => setEditing(true)}
+      onClick={() => setEditing((prevEditing) => !prevEditing)}
     />
   );
 };

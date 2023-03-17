@@ -5,6 +5,7 @@ import Todo from "./containers/Todo.js";
 import Scroll from "./containers/Scroll";
 import TodoFilter from "./features/filter/TodoFilter";
 import SideBar from "./containers/SideBar.js";
+import Clear from "./components/Clear.js";
 
 //use reach hooks to create a stateful component
 const TodoList = () => {
@@ -134,6 +135,7 @@ const TodoList = () => {
             : message}
         </Scroll>
         <TodoForm addTodo={addTodo} />
+        <Clear />
       </div>
     </div>
   );

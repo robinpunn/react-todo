@@ -12,6 +12,8 @@ const Todo = ({ todo, removeTodo, toggleComplete }) => {
   const handleEditSave = (newText) => {
     setEditing(true);
     todo.text = newText;
+    //if button is clicked again, set editing to false
+    setEditing(false);
   };
 
   //handle edit cancel
