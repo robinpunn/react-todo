@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { remainingTodos } from "../remaining/remainingTodosSlice";
 
 const initialState = {
   editingTodoId: null,
+  isEditing: false,
   editedText: "",
 };
 
@@ -10,25 +10,33 @@ const editSlice = createSlice({
   name: "edit",
   initialState,
   reducers: {
-    editTodo: (state, action) => {
-      const todo = state.todos.find((todo) => todo.id === action.payload.id);
-      if (todo) {
-        todo.text = action.payload.text;
-      }
+    editTodo: (state) => {
       state.editingTodoId = null;
-      remainingTodos(state);
+      state.isEditing = false;
     },
+
     setEditing: (state, action) => {
-      const todo = state.todos.find((todo) => todo.id === action.payload.id);
-      state.editingTodoId = action.payload;
-      state.editedText = todo ? todo.text : "";
+      const { id, text } = action.payload;
+      state.editingTodoId = id;
+      state.isEditing = true;
+      state.editedText = text;
     },
+
     updateEditedText: (state, action) => {
       state.editedText = action.payload;
+    },
+
+    toggleIsEditing: (state) => {
+      state.isEditing = !state.isEditing;
     },
   },
 });
 
-export const { editTodo, setEditing, updateEditedText } = editSlice.actions;
+export const {
+  editTodo,
+  setEditing,
+  updateEditedText,
+  toggleIsEditing,
+} = editSlice.actions;
 
 export default editSlice.reducer;

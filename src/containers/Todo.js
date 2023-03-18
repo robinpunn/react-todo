@@ -1,25 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import EditTodo from "../features/edit/EditTodo.js";
 import { EditIcon } from "../features/edit/EditIcon.js";
 import RemoveIcon from "../components/RemoveIcon.js";
 import ToggleComplete from "../components/ToggleComplete.js";
 
 const Todo = ({ todo }) => {
-  //create a state for the edit
-  const [editing, setEditing] = useState(false);
+  const { isEditing, editingTodoId } = useSelector((state) => state.edit);
 
-  //create a function to handle the edit
-  const handleEditSave = (newText) => {
-    setEditing(true);
-    todo.text = newText;
-    //if button is clicked again, set editing to false
-    setEditing(false);
-  };
-
-  //handle edit cancel
-  const handleEditCancel = () => {
-    setEditing(false);
-  };
+  const editing = isEditing && editingTodoId === todo.id;
 
   //render function
   return (
@@ -28,16 +17,16 @@ const Todo = ({ todo }) => {
         <ToggleComplete todo={todo} />
         {editing ? (
           <EditTodo
-            text={todo.text}
-            onSave={handleEditSave}
-            onCancel={handleEditCancel}
+            todo={todo}
+            // onSave={handleEditSave}
+            // onCancel={handleEditCancel}
           />
         ) : (
           <p key={todo.id}>{todo.text}</p>
         )}
       </div>
       <div className="editRemove">
-        <EditIcon todo={todo} setEditing={setEditing} />
+        <EditIcon todo={todo} />
         <RemoveIcon todo={todo} />
       </div>
     </div>

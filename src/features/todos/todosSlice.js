@@ -16,18 +16,26 @@ const todosSlice = createSlice({
         isCompleted: false,
       };
       state.todos.push(newTodo);
-      setTodos(state.todos);
+      localStorage.setItem("todos", JSON.stringify(state.todos));
+    },
+    updateTodo: (state, action) => {
+      const { id, text } = action.payload;
+      const todoIndex = state.todos.findIndex((todo) => todo.id === id);
+      if (todoIndex !== -1) {
+        state.todos[todoIndex].text = text;
+        localStorage.setItem("todos", JSON.stringify(state.todos));
+      }
     },
     toggleComplete: (state, action) => {
       const todo = state.todos.find((todo) => todo.id === action.payload.id);
       if (todo) {
         todo.isCompleted = !todo.isCompleted;
-        setTodos(state.todos);
+        localStorage.setItem("todos", JSON.stringify(state.todos));
       }
     },
     deleteTodo: (state, action) => {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
-      setTodos(state.todos);
+      localStorage.setItem("todos", JSON.stringify(state.todos));
     },
     setTodos: (state, action) => {
       state.todos = action.payload.todos;
@@ -39,6 +47,7 @@ const todosSlice = createSlice({
 
 export const {
   addTodo,
+  updateTodo,
   setTodos,
   toggleComplete,
   deleteTodo,

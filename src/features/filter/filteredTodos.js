@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-const useFilteredTodos = () => {
+export const useFilteredTodos = () => {
   const todos = useSelector((state) => state.todos.todos);
   const filter = useSelector((state) => state.selectedFilter.selectedFilter);
 
@@ -15,4 +15,8 @@ const useFilteredTodos = () => {
   });
 };
 
-export default useFilteredTodos;
+export const useAllTodos = () => {
+  const todos = useSelector((state) => state.todos.todos);
+
+  return todos;
+};

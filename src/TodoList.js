@@ -7,7 +7,7 @@ import TodoFilter from "./features/filter/TodoFilter";
 import SideBar from "./containers/SideBar.js";
 import Clear from "./components/Clear.js";
 import FilterMessage from "./features/filter/FilterMessage.js";
-import useFilteredTodos from "./features/filter/filteredTodos.js";
+import { useFilteredTodos } from "./features/filter/filteredTodos.js";
 
 const TodoList = () => {
   // const dispatch = useDispatch();
